@@ -26,7 +26,7 @@ stages:
   displayName: Build stage
   jobs:
   - job: BuildJob
-    pool: myAgentPool
+    pool: minhnt47-agent-pool
     steps:    
     - script: |
         python3.9 -m pip install --upgrade pip
