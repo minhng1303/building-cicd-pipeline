@@ -76,9 +76,9 @@ Run the following command to deploy the application to Azure App Services:
 ```bash
 az webapp up \
     --resource-group flask-ml-service-rg \
-    --name flask-ml-service-ikhono \
+    --name minhng130300_rg_0085 \
     --sku F1 \
-    --location eastus \
+    --location southeastasia \
     --verbose
 ```
 Visit the deployed application URL to verify deployment.
