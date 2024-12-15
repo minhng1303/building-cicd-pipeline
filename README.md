@@ -18,7 +18,7 @@ Continuous integration is implemented using GitHub Actions along with a Makefile
 ---
 
 ## Project Plan
-- Spreadsheet with the estimated project plan: [Project Management Spreadsheet]([https://github.com/thom/azure-ci-cd-pipeline/blob/main/project-management.xlsx](https://github.com/minhng1303/building-cicd-pipeline/blob/master/PROJECT%20PLAN%202024.xlsx)
+- Spreadsheet with the estimated project plan: [Project Management Spreadsheet](https://github.com/minhng1303/building-cicd-pipeline/blob/master/PROJECT%20PLAN%202024.xlsx)
 - Trello board for task tracking: [Azure CI/CD Pipeline Board](https://trello.com/b/Vt8CjsHG/cloud-devops-udacity-project2)
 
 ---
@@ -34,11 +34,11 @@ To set up and run this project, you need the following:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/thom/azure-ci-cd-pipeline.git
+   git clone https://github.com/minhng1303/building-cicd-pipeline
    ```
 2. Navigate to the project directory:
    ```bash
-   cd azure-ci-cd-pipeline
+   cd building-cicd-pipeline
    ```
 3. Create a virtual Python environment and activate it:
    ```bash
