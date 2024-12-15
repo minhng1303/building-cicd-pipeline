@@ -1,6 +1,6 @@
 # Udacity Cloud DevOps using Microsoft Azure Nanodegree Program - Project: Building a CI/CD Pipeline
 
-[![Python application test with Github Actions](https://github.com/thom/azure-ci-cd-pipeline/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/thom/azure-ci-cd-pipeline/actions/workflows/pythonapp.yml)
+[![Python application test with Github Actions](https://github.com/thom/azure-ci-cd-pipeline/actions/workflows/pythonapp.yml/badge.svg)]([https://github.com/thom/azure-ci-cd-pipeline/actions/workflows/pythonapp.yml](https://github.com/minhng1303/building-cicd-pipeline/blob/master/.github/workflows/pythonapp.yml))
 
 ## Project Overview
 This project builds a continuous integration and continuous delivery pipeline for a machine learning application implemented with scikit-learn and Flask. The application provides Boston house price predictions.
