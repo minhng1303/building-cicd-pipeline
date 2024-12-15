@@ -13,7 +13,7 @@ variables:
   azureServiceConnectionId: 'myServiceConnection'
   
   # TODO: Specify the value of the existing Web App name
-  webAppName: 'minhnt47webapp'
+  webAppName: 'udacity-project-2-cicd'
 
   # Environment name
   environmentName: 'azurecloud'
