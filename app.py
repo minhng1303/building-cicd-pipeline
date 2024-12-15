@@ -26,23 +26,19 @@ def home():
 # TO DO:  Log out the prediction value
 @app.route("/predict", methods=['POST'])
 def predict():
-    # Performs an sklearn prediction
+    json_payload = request.json
     try:
-        # Load pretrained model as clf. Try any one model. 
-        clf = joblib.load("./Housing_price_model/LinearRegression.joblib")
-        # clf = joblib.load("./Housing_price_model/StochasticGradientDescent.joblib")
-        # clf = joblib.load("./Housing_price_model/GradientBoostingRegressor.joblib")
+        clf = joblib.load("boston_housing_prediction.joblib")
     except:
-        LOG.info("JSON payload: %s json_payload")
+        LOG.info(f"JSON payload: {json_payload}")
         return "Model not loaded"
 
-    json_payload = request.json
-    LOG.info("JSON payload: %s json_payload")
+    LOG.info(f"JSON payload: {json_payload}")
     inference_payload = pd.DataFrame(json_payload)
-    LOG.info("inference payload DataFrame: %s inference_payload")
+    LOG.info(f"Inference payload DataFrame: {inference_payload}")
     scaled_payload = scale(inference_payload)
     prediction = list(clf.predict(scaled_payload))
-    return jsonify({'prediction': prediction})
+    return jsonify({"prediction": prediction})
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
