@@ -31,6 +31,9 @@ To set up and run this project, you need the following:
 - Azure Account
 - GitHub Account
 
+### Architecture
+![Architectural overview](project-overview.png)
+
 ### Installation
 1. Clone the repository:
    ```bash
