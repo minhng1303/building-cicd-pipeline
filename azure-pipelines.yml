@@ -24,9 +24,6 @@ variables:
   # Python version: 3.7
   pythonVersion: '3.7'
 
-  # Agent VM image name
-  vmImageName: 'ubuntu-latest'
-
 stages:
 - stage: Build
   displayName: Build stage
@@ -65,9 +62,7 @@ stages:
   condition: succeeded()
   jobs:
   - deployment: DeploymentJob
-    pool:
-      vmImage: $(vmImageName)
-    environment: $(environmentName)
+    pool: minhnt47-agent-pool
     strategy:
       runOnce:
         deploy:
