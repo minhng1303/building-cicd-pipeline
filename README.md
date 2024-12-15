@@ -75,8 +75,8 @@ To set up and run this project, you need the following:
 Run the following command to deploy the application to Azure App Services:
 ```bash
 az webapp up \
-    --resource-group flask-ml-service-rg \
-    --name minhng130300_rg_0085 \
+    --resource-group minhng130300_rg_0085 \
+    --name udacity-project-2-cicd \
     --sku F1 \
     --location southeastasia \
     --verbose
