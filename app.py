@@ -32,9 +32,6 @@ def predict():
     except FileNotFoundError as e:
         LOG.error(f"Model file not found: {e}")
         return "Model not loaded", 500
-    except Exception as e:
-        LOG.error(f"An unexpected error occurred while loading the model: {e}")
-        return "An error occurred", 500
 
     LOG.info(f"JSON payload: {json_payload}")
     inference_payload = pd.DataFrame(json_payload)
