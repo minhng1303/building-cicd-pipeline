@@ -1,121 +1,76 @@
-[![Python application test with Github Actions](https://github.com/thom/azure-ci-cd-pipeline/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/thom/azure-ci-cd-pipeline/actions/workflows/pythonapp.yml)
-
 # Udacity Cloud DevOps using Microsoft Azure Nanodegree Program - Project: Building a CI/CD Pipeline
 
-- [Project Overview](#project-overview)
-- [Project plan](#project-plan)
-- [Guideline](#guideline)
-  - [Project Architectural](#architectural-overview)
-  - [Test the web app in Azure Cloud Shell](#test-the-web-app-in-azure-cloud-shell)
-  - [Deploy the web app to Azure App Services](#deploy-the-web-app-to-azure-app-services)
-  - [Create Azure DevOps pipeline](#create-azure-devops-pipeline)
-  - [Make a prediction](#make-a-prediction)
-  - [Load testing](#load-testing)
-- [Clean-up](#clean-up)
-- [Enhancements](#enhancements)
-- [Demo](#demo)
-- [References](#references)
-- [Requirements](#requirements)
-- [License](#license)
+[![Python application test with Github Actions](https://github.com/thom/azure-ci-cd-pipeline/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/thom/azure-ci-cd-pipeline/actions/workflows/pythonapp.yml)
 
 ## Project Overview
+This project builds a continuous integration and continuous delivery pipeline for a machine learning application implemented with scikit-learn and Flask. The application provides Boston house price predictions.
 
-This project builds a continuous integration and continuous delivery pipeline for a machine learning application implemented with scikit-learn
-and Flask. The application provides Boston house price predictions.
+Continuous integration is implemented using GitHub Actions along with a Makefile, requirements.txt, and application code to perform an initial lint, test, and install cycle. The project builds an integration with Azure Pipelines to enable Continuous Delivery to Azure App Service.
 
-Continuous integration is implemented using Github Actions along with a Makefile, requirements.txt and application code to perform an initial lint, test, and install cycle. The project builds an integration with Azure Pipelines to enable Continuous Delivery to Azure App Service.
+---
 
-## Project plan
+## Features
+- Continuous Integration with GitHub Actions
+- Continuous Delivery using Azure Pipelines
+- Scikit-learn-based machine learning model for price prediction
+- Deployment to Azure App Services
 
+---
+
+## Project Plan
 - Spreadsheet with the estimated project plan: [Project Management Spreadsheet](https://github.com/thom/azure-ci-cd-pipeline/blob/main/project-management.xlsx)
 - Trello board for task tracking: [Azure CI/CD Pipeline Board](https://trello.com/b/cvzyhixM/azure-ci-cd-pipeline)
 
-## Guideline
+---
 
-### Project Architectural
+## Getting Started
 
-![Architectural overview](images/architectural-overview.png)
+### Prerequisites
+To set up and run this project, you need the following:
+- Python 3.x
+- Azure Account
+- GitHub Account
 
-1. The developer pushes the code to GitHub
-2. GitHub Actions runs the following actions:
-   - `make install`
-   - `make lint`
-   - `make test`
-3. Azure Pipelines builds the project
-   - Creates virtual Python environment
-   - Installs all requirements
-   - Runs `make install` and `make lint`
-   - Deploys the web app to App Services
-4. App Services serves the web app
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/thom/azure-ci-cd-pipeline.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd azure-ci-cd-pipeline
+   ```
+3. Create a virtual Python environment and activate it:
+   ```bash
+   make setup
+   source ~/.udacity-devops/bin/activate
+   ```
+4. Install dependencies:
+   ```bash
+   make install
+   ```
 
-### Test the web app in Azure Cloud Shell
+### Running the Project
+1. Run the application locally:
+   ```bash
+   FLASK_APP=app.py flask run
+   ```
+2. Open your browser and navigate to:
+   ```
+   http://localhost:5000
+   ```
+3. Test predictions:
+   ```bash
+   ./make_prediction.sh
+   ```
 
-Open a new Azure Cloud Shell and create new SSH keys to access the GitHub repository:
+---
 
+## Deployment
+
+### Deploy to Azure App Services
+Run the following command to deploy the application to Azure App Services:
 ```bash
-ssh-keygen -t rsa
-```
-
-Copy the contents of the new public key to your GitHub profile in settings:
-
-```bash
-cat ~/.ssh/id_rsa.pub
-```
-
-Fork this repository and adapt the following URL to match the path to your forked repository:
-
-```bash
-git clone git@github.com:thom/azure-ci-cd-pipeline.git
-```
-
-![git clone](images/git-clone.png)
-
-Change into the new directory:
-
-```bash
-cd azure-ci-cd-pipeline
-```
-
-Create a virtual Python environment and activate it:
-
-```bash
-make setup
-source ~/.udacity-devops/bin/activate
-```
-
-Install all dependencies in the virtual environment and run tests:
-
-```bash
-make all
-```
-
-![make all](images/make-all.png)
-
-Run the application in the Azure Cloud Shell environment:
-
-```bash
-FLASK_APP=app.py flask run
-```
-
-Open a new Cloud Shell session and make a prediction:
-
-```bash
-./make_prediction.sh
-```
-
-The output should look like below:
-
-![Prediction](images/prediction-local.png)
-
-Successful build of the project in GitHub:
-
-![GitHub Actions](images/github-build.png)
-
-### Deploy the web app to Azure App Services
-
-In order to deploy the application to Azure App Service, you can run the following command:
-
-```
 az webapp up \
     --resource-group flask-ml-service-rg \
     --name flask-ml-service-ikhono \
@@ -123,127 +78,74 @@ az webapp up \
     --location eastus \
     --verbose
 ```
+Visit the deployed application URL to verify deployment.
 
-The name must be unique. If you visit the URL, you should see your site deployed:
+---
 
-![Deployed web app](images/deploy.png)
+## CI/CD Pipeline
 
-If you want to update your app, make changes to your code and then run:
+### GitHub Actions
+GitHub Actions automates linting, testing, and building:
+- Actions include:
+  - `make install`
+  - `make lint`
+  - `make test`
 
-```
-az webapp up \
-    --name flask-ml-service-ikhono \
-    --verbose
-```
+### Azure Pipelines
+Azure Pipelines deploy the application to Azure App Services. Follow these steps:
+1. Create a project in [Azure DevOps](https://dev.azure.com/).
+2. Set up a service connection for Azure Resource Manager.
+3. Create a pipeline and connect it to the GitHub repository.
+4. Deploy using variables for resource group and application name.
 
-### Create Azure DevOps pipeline
+---
 
-Follow [Use CI/CD to deploy a Python web app to Azure App Service on Linux](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops) in order to setup the Azure DevOps pipeline for the project.
+## Load Testing
+Use Locust for load testing:
+1. Install Locust:
+   ```bash
+   pip install locust
+   ```
+2. Start Locust:
+   ```bash
+   locust
+   ```
+3. Open [http://localhost:8089](http://localhost:8089) to configure and start the test.
 
-You need to execute the following steps:
+---
 
-1. Go to [dev.azure.com](https://dev.azure.com/) and sign-in
-2. Create a new project
-3. Go to project settings and create a new service connection:
-   - Select "Azure Resource Manager"
-   - Select "Service principal (automatic)" as authentication method
-   - Select your subscription and the "flask-ml-service-rg" resource group
-   - Make sure to grant access permission to all pipelines
-4. Create a new pipeline:
-    - Select "GitHub" on the "Connect" tab
-    - Chose your repository on the "Select" tab
-    - Update the variables
-
-```bash
-# Azure Resource Manager connection created during pipeline creation
-azureServiceConnectionId: '797b064-faf8-45c8-be58-b627cd632286'
-
-# Web app name
-webAppName: 'flask-ml-service-ikhono'
-
-# Environment name
-environmentName: 'flask-ml-service-ikhono'
-```
-
-Use the following end-point to get your Azure Service Connection ID: [https://dev.azure.com/{organization}/{project}/_apis/serviceendpoint/endpoints?api-version=5.0-preview.2
-](https://dev.azure.com/{organization}/{project}/_apis/serviceendpoint/endpoints?api-version=5.0-preview.2
-) (replace organization and project accordingly).
-
-Successful deployment of the project in Azure Pipelines:
-
-![Azure Pipelines deployment](images/azure-pipelines-deploy.png)
-
-Running Azure App Service from Azure Pipelines automatic deployment:
-
-![Azure App Service](images/web-app.png)
-
-### Make a prediction
-
-Run `make_predict_azure_app.sh` to make a prediction:
-
-![Successful prediction](images/prediction-app-service.png)
-
-View your app logs to check the requests:
-
-```bash
-az webapp log tail -g flask-ml-service-rg --name flask-ml-service-ikhono
-```
-
-![App log](images/app-log.png)
-
-### Load testing
-
-Locust can be used to do a load test against the application.
-
-Install and start Locust:
-
-```bash
-pip install locust
-locust
-```
-
-Open [http://localhost:8089](http://localhost:8089). Enter number of total users to simulate and the spawn rate and click "start swarming":
-
-![New Locust load test](images/locust-new.png)
-
-Watch the result of the load test:
-
-![New Locust load test](images/locust-running.png)
-
-## Clean-up
-
-The easiest way to clean-up all resources created in this project, is to delete the resource group:
-
+## Clean-Up
+To clean up resources, delete the Azure resource group:
 ```bash
 az group delete -n flask-ml-service-rg
 ```
 
+---
+
 ## Enhancements
+Potential improvements:
+- Use Git branches for staging environments
+- Deploy infrastructure using Terraform
+- Consolidate CI/CD workflows into a single tool
 
-The following enhancements could be implemented to improve the project:
-
-- Use Git branches to deploy code into testing/staging environment instead of pushing it to production immediately
-- Use Terraform to deploy the infrastructure instead of Azure CLI
-- Only use one CI/CD tool instead of using GitHub Actions and Azure Pipelines
+---
 
 ## Demo
+View a video demonstration of the project: [Project Demo](https://www.youtube.com/watch?v=V91qf4VZ9vk)
 
-See [here](https://www.youtube.com/watch?v=V91qf4VZ9vk) for a video demonstrating the project.
+---
 
 ## References
+- [Build CI workflows with GitHub Actions](https://docs.microsoft.com/en-us/learn/modules/github-actions-ci)
+- [Deploy a Python app to Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/quickstart-python)
+- [Create a CI/CD pipeline in Azure DevOps](https://docs.microsoft.com/en-us/azure/devops-pipelines/ecosystems/python-webapp)
 
-- [Build continuous integration (CI) workflows by using GitHub Actions](https://docs.microsoft.com/en-us/learn/modules/github-actions-ci)
-- [Manage repository changes by using pull requests on GitHub](https://docs.microsoft.com/en-us/learn/modules/manage-changes-pull-requests-github)
-- [Implement a code workflow in your build pipeline by using Git and GitHub](https://docs.microsoft.com/en-us/learn/modules/implement-code-workflow)
-- [Quickstart: Create a Python app using Azure App Service on Linux](https://docs.microsoft.com/en-us/azure/app-service/quickstart-python?tabs=bash)
-- [Use CI/CD to deploy a Python web app to Azure App Service on Linux](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp)
-- [Create a CI/CD pipeline for Python with Azure DevOps Starter](https://docs.microsoft.com/en-us/azure/devops-project/azure-devops-project-python)
-
-## Requirements
-
-Graded according to the [Project Rubric](https://review.udacity.com/#!/rubrics/2860/view).
+---
 
 ## License
+This project is licensed under the [MIT License](http://opensource.org/licenses/mit-license.php).
 
-- **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- Copyright 2021 © [Thomas Weibel](https://github.com/thom).
+---
+
+## Contact
+For inquiries, contact Thomas Weibel at [https://github.com/thom](https://github.com/thom).
