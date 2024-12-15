@@ -32,7 +32,7 @@ To set up and run this project, you need the following:
 - GitHub Account
 
 ### Architecture
-[Architectural overview](project-overview.png)
+![Architectural overview](project-overview.png)
 
 ### Installation
 1. Clone the repository:
