@@ -103,28 +103,6 @@ Azure Pipelines deploy the application to Azure App Services. Follow these steps
 
 ---
 
-## Load Testing
-Use Locust for load testing:
-1. Install Locust:
-   ```bash
-   pip install locust
-   ```
-2. Start Locust:
-   ```bash
-   locust
-   ```
-3. Open [http://localhost:8089](http://localhost:8089) to configure and start the test.
-
----
-
-## Clean-Up
-To clean up resources, delete the Azure resource group:
-```bash
-az group delete -n flask-ml-service-rg
-```
-
----
-
 ## Enhancements
 Potential improvements:
 - Use Git branches for staging environments
