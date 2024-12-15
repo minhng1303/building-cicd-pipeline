@@ -9,8 +9,8 @@ source ~/.udacity-devops/bin/activate
 make all
 
 az webapp up \
-    --resource-group flask-ml-service-rg \
-    --name minhng130300_rg_0085 \
+    --resource-group minhng130300_rg_0085 \
+    --name udacity-project-2-cicd \
     --sku F1 \
     --location southeastasia \
     --verbose
