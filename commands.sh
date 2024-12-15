@@ -1,7 +1,8 @@
 https://github.com/minhng1303/building-cicd-pipeline
 
 cd building-cicd-pipeline
-
+  
+  
 make setup
 
 source ~/.udacity-devops/bin/activate
