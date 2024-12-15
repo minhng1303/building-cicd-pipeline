@@ -10,7 +10,7 @@ make all
 
 az webapp up \
     --resource-group flask-ml-service-rg \
-    --name udacity-project-2-cicd \
+    --name minhng130300_rg_0085 \
     --sku F1 \
     --location southeastasia \
     --verbose
