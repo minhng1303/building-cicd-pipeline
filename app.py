@@ -28,7 +28,7 @@ def home():
 def predict():
     json_payload = request.json
     try:
-        clf = joblib.load("boston_housing_prediction.joblib")
+        clf = joblib.load("./Housing_price_model/LinearRegression.joblib")
     except FileNotFoundError as e:
         LOG.error(f"Model file not found: {e}")
         return "Model not loaded", 500
