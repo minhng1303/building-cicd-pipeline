@@ -112,7 +112,7 @@ Potential improvements:
 ---
 
 ## Demo
-View a video demonstration of the project: [Project Demo]()
+View a video demonstration of the project: [Project Demo](https://www.youtube.com/watch?v=igylQop374U)
 
 ---
 
