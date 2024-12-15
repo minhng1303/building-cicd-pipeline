@@ -131,21 +131,7 @@ Potential improvements:
 ---
 
 ## Demo
-View a video demonstration of the project: [Project Demo](https://www.youtube.com/watch?v=V91qf4VZ9vk)
+View a video demonstration of the project: [Project Demo]()
 
 ---
 
-## References
-- [Build CI workflows with GitHub Actions](https://docs.microsoft.com/en-us/learn/modules/github-actions-ci)
-- [Deploy a Python app to Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/quickstart-python)
-- [Create a CI/CD pipeline in Azure DevOps](https://docs.microsoft.com/en-us/azure/devops-pipelines/ecosystems/python-webapp)
-
----
-
-## License
-This project is licensed under the [MIT License](http://opensource.org/licenses/mit-license.php).
-
----
-
-## Contact
-For inquiries, contact Thomas Weibel at [https://github.com/thom](https://github.com/thom).
