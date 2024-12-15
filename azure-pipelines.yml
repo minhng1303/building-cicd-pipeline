@@ -15,9 +15,6 @@ variables:
   # TODO: Specify the value of the existing Web App name
   webAppName: 'minhnt47webapp'
 
-  # Environment name
-  environmentName: 'AzureCloud'
-
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
 
@@ -67,7 +64,6 @@ stages:
   - deployment: DeploymentJob
     pool:
       vmImage: $(vmImageName)
-    environment: $(environmentName)
     strategy:
       runOnce:
         deploy:
