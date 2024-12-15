@@ -18,7 +18,7 @@ Continuous integration is implemented using GitHub Actions along with a Makefile
 ---
 
 ## Project Plan
-- Spreadsheet with the estimated project plan: [Project Management Spreadsheet](https://github.com/thom/azure-ci-cd-pipeline/blob/main/project-management.xlsx)
+- Spreadsheet with the estimated project plan: [Project Management Spreadsheet]([https://github.com/thom/azure-ci-cd-pipeline/blob/main/project-management.xlsx](https://github.com/minhng1303/building-cicd-pipeline/blob/master/PROJECT%20PLAN%202024.xlsx)
 - Trello board for task tracking: [Azure CI/CD Pipeline Board](https://trello.com/b/Vt8CjsHG/cloud-devops-udacity-project2)
 
 ---
