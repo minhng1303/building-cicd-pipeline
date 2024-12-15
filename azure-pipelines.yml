@@ -63,6 +63,7 @@ stages:
   jobs:
   - deployment: DeploymentJob
     pool: minhnt47-agent-pool
+    environment: $(environmentName)
     strategy:
       runOnce:
         deploy:
