@@ -1,6 +1,6 @@
 # Udacity Cloud DevOps using Microsoft Azure Nanodegree Program - Project: Building a CI/CD Pipeline
 
-[![Python application test with Github Actions](https://github.com/thom/azure-ci-cd-pipeline/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/thom/azure-ci-cd-pipeline/actions/workflows/pythonapp.yml)
+[![Python application test with Github Actions](https://github.com/minhng1303/building-cicd-pipeline/actions/workflows/pythonapp.yml/badge.svg)](https://github.com/minhng1303/building-cicd-pipeline/blob/master/.github/workflows/pythonapp.yml)
 
 ## Project Overview
 This project builds a continuous integration and continuous delivery pipeline for a machine learning application implemented with scikit-learn and Flask. The application provides Boston house price predictions.
@@ -112,7 +112,24 @@ Potential improvements:
 ---
 
 ## Demo
-View a video demonstration of the project: [Project Demo]()
+View a video demonstration of the project: [Project Demo](https://www.youtube.com/watch?v=igylQop374U)
 
 ---
 
+### Screenshots
+
+Azure App Service used to deploy web app
+![](./Images/azure-app-service.png)
+
+Clone source code from github into Azure Cloud Shell
+![](./Images/clone-source-code-1.png)
+![](./Images/clone-source-code-2.png)
+
+Running Make all
+![](./Images/make-all.png)
+
+Make prediction test
+![](./Images/make-prediction-test.png)
+
+Running app
+![](./Images/running-app.png)
