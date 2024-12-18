@@ -122,8 +122,8 @@ Azure App Service used to deploy web app
 ![](./Images/azure-app-service.png)
 
 Clone source code from github into Azure Cloud Shell
-![](./Images/cloud-source-code-1.png)
-![](./Images/cloud-source-code-2.png)
+![](./Images/clone-source-code-1.png)
+![](./Images/clone-source-code-2.png)
 
 Running Make all
 ![](./Images/make-all.png)
