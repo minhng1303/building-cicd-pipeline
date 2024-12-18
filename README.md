@@ -114,7 +114,7 @@ Potential improvements:
 ## Demo
 View a video demonstration of the project: 
 
-[Project Demo](https://youtu.be/EZbLhiseDro)
+[Project Demo](https://youtu.be/ECBN2c-SZOE)
 
 ---
 
