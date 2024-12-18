@@ -116,3 +116,7 @@ View a video demonstration of the project: [Project Demo](https://www.youtube.co
 
 ---
 
+### Screenshots
+Azure App Service used to deploy web app
+![](./Images/azure-app-service.png)
+
