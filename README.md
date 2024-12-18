@@ -117,6 +117,19 @@ View a video demonstration of the project: [Project Demo](https://www.youtube.co
 ---
 
 ### Screenshots
+
 Azure App Service used to deploy web app
 ![](./Images/azure-app-service.png)
 
+Clone source code from github into Azure Cloud Shell
+![](./Images/cloud-source-code-1.png)
+![](./Images/cloud-source-code-2.png)
+
+Running Make all
+![](./Images/make-all.png)
+
+Make prediction test
+![](./Images/make-prediction-test.png)
+
+Running app
+![](./Images/running-app.png)
