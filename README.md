@@ -131,6 +131,7 @@ Running Make all
 ![](./Images/make-all.png)
 
 Make prediction test
+
 ![](./Images/make-prediction-test.png)
 
 Running app
