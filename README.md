@@ -114,11 +114,7 @@ Potential improvements:
 ## Demo
 View a video demonstration of the project: 
 
-Part 1
-[Project Demo](https://youtu.be/9-UoI0XNt_k)
-
-Part 2
-[Project Demo](https://youtu.be/hNu4Fo3t42s)
+[Project Demo](https://youtu.be/ECBN2c-SZOE)
 
 ---
 
@@ -139,3 +135,9 @@ Make prediction test
 
 Running app
 ![](./Images/running-app.png)
+
+Screenshot showing the output of a test run
+![](./Images/conduct-test-run.png)
+
+Successful run of the project in Azure Pipelines
+![](./Images/test-application-in-azure-pipelines.png)
