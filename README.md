@@ -135,3 +135,9 @@ Make prediction test
 
 Running app
 ![](./Images/running-app.png)
+
+Screenshot showing the output of a test run
+![](./Images/conduct-test-run.png)
+
+Successful run of the project in Azure Pipelines
+![](./Images/test-application-in-azure-pipelines.png)
